@@ -21,22 +21,20 @@ const arr1 = [max1,min1]
 
 console.log(arr1)
 
-const printNumbers = (input) => {
-    if (!input && input !== 0) {
-        return ''
-    }
-    input = input.toString()
-    let arrInput = input.split('');
-    let Result = ''
-    arrInput.map(num => {
-        Result += `${num}: `
-        for (let i = 0; i < num; i++) {
-            Result += num;
+const myArr = [2, 3, 4, 5, 5, 6, 5, 2]
+
+const getOccurrences = (arr) => {
+    arr.reduce((prev, cur) => {
+        if (!prev[cur]) {
+            prev[cur] = 1
+        } else {
+            prev[cur] = prev[cur] + 1
         }
-        Result += '\n'
-    })
-    return Result;
+        console.log(prev)
+        return prev
+    }, {})
+
 }
 
-console.log(printNumbers(123))
+console.log(getOccurrences(myArr))
 
